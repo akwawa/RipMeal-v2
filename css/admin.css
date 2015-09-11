@@ -1,0 +1,110 @@
+#section_form {
+	background-color:#F1EFE2;
+	padding:auto; /* 0 20px */
+	margin:5em auto;
+	width:25em;
+	text-align:center;
+}
+#section_form form {
+	border: medium none currentColor;
+	display: block;
+}
+.required {
+	background: url("img/required.png") 98% 50% no-repeat #FFFFFF;
+}
+input:not(.bouton) { 
+	background: #FCFDFD;
+	border: 1px solid #A6C9E2;
+	border-radius: 5px;
+	color: #222222;
+	height: 2em;
+	outline: medium none currentColor;
+	padding-left: 5px;
+	padding-right: 25px;
+	width:auto;
+}
+input, button, select, label, .btn { 
+	font-family: inherit;
+	vertical-align: middle;
+}
+.bouton { 
+	background: #86BDE1;
+	border: 1px solid #86BDE1;
+	color: #FFFFFF;
+	font-weight: 700;
+	height: 30px;
+	padding: 0px;
+	width: 8em;
+	border-radius: 5px;
+}
+
+
+
+form label {
+	 display:block;
+}
+label.inline {
+	display:inline;
+	margin-right:50px;
+}
+
+form textarea {
+	width:96%;
+	margin:1em 2%;
+}
+
+#fond_detail {
+	background-color:#000000;
+	left:0px;
+	opacity:0.5;
+	position:absolute;
+	top:0px;
+	width:100%;
+}
+#apercu_details {
+	background-color:white;
+	margin:1em;
+	margin-left:-20em;
+	left:50%;
+	width:600px;
+	padding:1em;
+	position:absolute;
+}
+
+.etiquette {
+	min-width:9.91cm;
+	min-height:6.77cm;
+	width:9.91cm;
+	height:6.77cm;
+	max-width:9.91cm;
+	max-height:6.77cm;
+}
+
+.etiquette .logo {
+	max-width:3.00cm
+}
+
+.etiquette .autorisation {
+	max-width:1.60cm;
+}
+
+.fleche {
+	width:20px;
+}
+
+input[type=checkbox] {
+        font-family: inherit;
+        vertical-align: middle;
+        border-radius:0px;
+        height:1em;
+        margin:0px;
+        padding:0px;
+        width:auto;
+        border:1px solid #000;
+        text-indent: 0px;
+        box-sizing: border-box;
+        font: normal normal 400 13px/normal Verdana;
+}
+input[type=checkbox]:checked {
+        color: #09ad7e;
+}

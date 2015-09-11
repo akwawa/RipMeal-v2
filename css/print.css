@@ -1,0 +1,65 @@
+* { size:0.8em; }
+div#main_right { width:100%; }
+div#main_left {
+	margin:0;
+	padding:0;
+	display:none;
+}
+table {
+text-align:center;
+border:3px solid #6495ed;
+border-collapse:collapse;
+width:auto;
+margin:auto;
+margin-bottom:10px;
+}
+tbody {
+background-color:#FFFFFF;
+border:1px solid #6495ed;
+width:auto;
+}
+th {
+border:1px dotted #6495ed;
+padding:5px;
+background-color:#EFF6FF;
+width:auto;
+}
+td {
+font-size:80%;
+border:1px solid #6495ed;
+padding:5px;
+width:auto;
+}
+caption {
+background-color:#D0E3FA;
+width:auto;
+}
+thead, tfoot {
+width:auto;
+background-color:#D0E3FA;
+background-image:url('img/sky.jpg');
+border:1px solid #6495ed;
+}
+/*table { page-break-inside:avoid; }*/
+th { word-wrap:break-word; }
+td { word-wrap:break-word; }
+div.page { page-break-after:always; clear:both; }
+.tab_MIDI { float:left; }
+.tab_SOIR { float:right; }
+.tableau_Chef {border-color:red;}
+.tableau_Chef caption{background-color:lightsalmon;}
+.tableau_Chef th {border-color:red;}
+.tableau_Chef td {border-color:red;}
+
+.prepa {border-color:green;}
+.prepa caption{background-color:lime;}
+.prepa th {border-color:green;background-color:darkseagreen}
+.prepa td {border-color:green;}
+
+
+tr:nth-child(odd) { background-color:white; }
+tr:nth-child(even) { background-color:lightsteelblue; }
+
+table.menu {
+	height:20cm;
+}

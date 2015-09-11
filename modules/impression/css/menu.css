@@ -1,0 +1,28 @@
+table {
+	margin:auto;
+	text-align:center;
+	border:3px solid #000;
+	border-collapse:collapse;
+	white-space:pre-wrap;
+	height:20cm;
+}
+caption {
+	background-color:#9FE855;
+}
+tbody {
+	border:1px solid #000;
+}
+th {
+	border:1px dotted #000;
+	background-color:#FFF48D;
+}
+td {
+	border:1px solid #000;
+	background-color:white;
+}
+td:nth-child(odd) {
+	background-color:#FFC652;
+}
+div.logo {
+	text-align:center;
+}
