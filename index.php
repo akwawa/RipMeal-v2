@@ -86,7 +86,7 @@ if (isset($_SESSION['id'])) {
 			unset($requete_logs);
 			/********/
 
-			header("Location: index.php?menu=maj");
+			header("Location: index.php?menu=sauvegarde&sousmenu=automatique");
 		}
 	}
 	echo construire_page($page);

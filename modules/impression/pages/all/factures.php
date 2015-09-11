@@ -32,7 +32,7 @@ if ($_SESSION) {
 		$requete_personnes->executer_requete();
 		$resultat = $requete_personnes->resultat;
 		foreach ($resultat as $temp) {
-			$liste_personnes[$temp['p.nom']][$type] = $temp['SUM(pr.quantite)']+$temp['SUM(pr.quantiteRemp)'];
+			$liste_personnes[$temp['p.nom'].' '.$temp['p.prenom']][$type] = $temp['SUM(pr.quantite)']+$temp['SUM(pr.quantiteRemp)'];
 		}
 	}
 	if ($liste_personnes) {

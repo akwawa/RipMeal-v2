@@ -51,7 +51,7 @@ if ($_SESSION) {
 			if ($temp) {
 				$resultat[$temp['intitule']] = $temp['texte'];
 				if ($retour = verif_maj('http://'.$racineSite.'/', $fichierVersion, $nomApplication, $resultat)) {
-					echo '<p>Version actuelle : V '.$resultat['version'].' </p><div>Version disponible : <ul>';
+					echo '<p>Version actuelle : V '.$resultat['version'].' </p><div>Version disponible sur Internet : <ul>';
 					foreach ($retour as $nouvelleVersion) {
 						if ($nouvelleVersion['minVersion'] <= $resultat['version']) {
 							echo '<li style="color:green;">V '.$nouvelleVersion['version'].' (version requise : V '.$nouvelleVersion['minVersion'].') <input type="button" value="Installer" data-urlFichier="'.$racineSite.'/'.$nouvelleVersion['fichierMaj'].'" data-version="'.$nouvelleVersion['version'].'" data-fichier="'.$nouvelleVersion['fichier'].'" onclick="miseAJour(this);" /></li>';
@@ -66,8 +66,33 @@ if ($_SESSION) {
 			} else {
 				echo 'Erreur : impossible de trouver la version installée';
 			}
-		} else {
-			echo 'Erreur : impossible de se connecter au site distant';
+		} else{
+			$repertoire = chemin_racine().'maj/';
+			if (is_dir($repertoire) && $dh = opendir($repertoire)) {
+				$requete = new requete();
+				$requete->where(array('param' => array('intitule' => 'version')));
+				// echo $requete->requete_complete().'<br>';
+				$requete->grand_tableau = false;
+				$requete->executer_requete();
+				$temp = $requete->resultat;
+				if ($temp) {
+					$resultat[$temp['intitule']] = $temp['texte'];
+					echo '<p>Version actuelle : V '.$resultat['version'].' </p><div>Version disponible en local : <ul>';
+					while (($file = readdir($dh)) !== false) {
+						if (is_file($repertoire.$file)) {
+							$version_fichier=substr($file, 12, 4);
+							if ($version_fichier > $resultat['version']) {
+								echo '<li style="color:green;">V '.$version_fichier.' <input type="button" value="Installer" data-urlFichier="'.$repertoire.$file.'" data-version="'.$version_fichier.'" data-fichier="'.$file.'" onclick="miseAJour(this);" /></li>';
+							} else {
+								echo '<li style="color:red;">V '.$version_fichier.'</li>';
+							}
+						}
+					}
+					echo '</ul></div>';
+				}
+			} else {
+				echo 'Erreur : impossible de se connecter au site distant et aucun fichier de mise à jour local';
+			}
 		}
 	} else {
 		echo 'Erreur : paramètres de connexion éronné';
